@@ -6,7 +6,8 @@
   background-color: #202020;
   text-decoration: none;
   color: white;
-  font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", "Chalkboard SE", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', 'Chalkboard SE',
+    'Chalkboard', 'ChalkboardSE-Regular', sans-serif;
 }
 
 /* main webpage. centered and wide */
@@ -212,4 +213,4 @@ strong {
   li {
     font-size: 125%;
   }
-}/*# sourceMappingURL=main.css.map */
+}
