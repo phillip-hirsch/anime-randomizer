@@ -4,7 +4,7 @@ import { type Anime } from '../types'
  * Tries to truncate the synopsis from the API. If the synopsis is null, returns a blank string.
  */
 export const displaySynopsis = (anime: Anime) => {
-  const maxLength = 100
+  const maxLength = 800
 
   if (!anime.synopsis) return ''
 
