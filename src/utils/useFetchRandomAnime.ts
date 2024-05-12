@@ -1,25 +1,34 @@
 import { useState } from 'react'
-import { type Anime } from '.'
+import { type Anime, type Page } from '.'
 
 export const useFetchRandomAnime = () => {
-  const [randomAnime, setRandomAnime] = useState({} as Anime['randomAnime'])
-  const [page, setPage] = useState('Home')
+  const [randomAnime, setRandomAnime] = useState<Anime>()
+  const [page, setPage] = useState<Page>('Home')
 
   /**
    * Fetches a random anime from Jikan's API.
    */
   const fetchRandomAnime = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v4/random/anime`).then(
-      (res) => res.json()
-    )
-
     setPage('Loading')
-    setRandomAnime(temp.data as Anime['randomAnime'])
+    try {
+      const response = await fetch(`https://api.jikan.moe/v4/random/anime`)
 
-    // Wait for timeout to artificially lengthen load time
-    await new Promise((r) => setTimeout(r, 2500))
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
 
-    setPage('Random')
+      const temp = await response.json()
+
+      setRandomAnime(temp.data as Anime)
+
+      // Wait for timeout to artificially lengthen load time
+      await new Promise((r) => setTimeout(r, 2500))
+
+      setPage('Random')
+    } catch (error) {
+      console.error('Failed to fetch anime:', error)
+      setPage('Error')
+    }
   }
 
   return { randomAnime, page, fetchRandomAnime }

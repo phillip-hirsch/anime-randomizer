@@ -7,14 +7,14 @@ import {
 } from '.'
 import { ListItem } from '../components'
 
-export const renderItems = ({ randomAnime }: Anime) => [
+export const renderItems = (anime: Anime) => [
   {
     id: 'thumbnail',
     content: (
       <ListItem
         image={{
           className: 'thumbnail',
-          src: displayImage({ randomAnime }),
+          src: displayImage(anime),
           alt: 'anime thumbnail',
         }}
       />
@@ -22,46 +22,44 @@ export const renderItems = ({ randomAnime }: Anime) => [
   },
   {
     id: 'type',
-    content: <ListItem title="Type" content={randomAnime.type} />,
+    content: <ListItem title="Type" content={anime.type} />,
   },
   {
     id: 'aired',
-    content: <ListItem title="Aired" content={displayAired({ randomAnime })} />,
+    content: <ListItem title="Aired" content={displayAired(anime)} />,
   },
   {
     id: 'episodes',
     content: (
       <ListItem
         title="Episodes"
-        content={`${randomAnime.episodes} ${randomAnime.duration}`}
+        content={`${anime.episodes} ${anime.duration}`}
       />
     ),
   },
   {
     id: 'score',
-    content: <ListItem title="Score" content={randomAnime.score} />,
+    content: <ListItem title="Score" content={anime.score} />,
   },
   {
     id: 'rank-popularity',
     content: (
       <ListItem
         title="Rank/Popularity"
-        content={`${randomAnime.rank} / ${randomAnime.popularity}`}
+        content={`${anime.rank} / ${anime.popularity}`}
       />
     ),
   },
   {
     id: 'rating',
-    content: <ListItem title="Rating" content={randomAnime.rating} />,
+    content: <ListItem title="Rating" content={anime.rating} />,
   },
   {
     id: 'genre',
-    content: <ListItem title="Genre" content={displayGenre({ randomAnime })} />,
+    content: <ListItem title="Genre" content={displayGenre(anime)} />,
   },
   {
     id: 'synopsis',
-    content: (
-      <ListItem title="Synopsis" content={displaySynopsis({ randomAnime })} />
-    ),
+    content: <ListItem title="Synopsis" content={displaySynopsis(anime)} />,
   },
 ]

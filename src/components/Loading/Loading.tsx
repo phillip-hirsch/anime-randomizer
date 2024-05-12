@@ -6,8 +6,10 @@ import styles from './styles.module.css'
  */
 export const Loading = () => (
   <main className={styles.loadingMain}>
-    <div>
-      <img className={styles.loadingGif} src={wheelSpin} alt="loading..." />
-    </div>
+    <img
+      className={styles.loadingGif}
+      src={wheelSpin}
+      alt="Spinning wheel indicating loading"
+    />
   </main>
 )

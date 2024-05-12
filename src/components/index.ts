@@ -1,4 +1,6 @@
 export * from './AnimeTitle'
+export * from './Button'
+export * from './Error'
 export * from './Home'
 export * from './List'
 export * from './ListItem'

@@ -5,11 +5,9 @@ import { List } from '../List'
 /**
  * Main function that displays random anime information
  */
-export const Randomizer = ({ randomAnime }: Anime) => (
+export const Randomizer = (anime: Anime) => (
   <main>
-    <div>
-      <AnimeTitle randomAnime={randomAnime} />
-      <List items={renderItems({ randomAnime })} />
-    </div>
+    <AnimeTitle {...anime} />
+    <List items={renderItems(anime)} />
   </main>
 )

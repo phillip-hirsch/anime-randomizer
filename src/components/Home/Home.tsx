@@ -1,14 +1,16 @@
 import styles from './styles.module.css'
 
+interface HomeProps {
+  title?: string
+}
+
 /**
  * Displays the home page title
  */
-export const Home = () => (
+export const Home = ({ title = 'Anime Randomizer' }: HomeProps) => (
   <main>
-    <div>
-      <h1>
-        <strong className={styles.home}>Anime Randomizer</strong>
-      </h1>
-    </div>
+    <h1>
+      <strong className={styles.home}>{title}</strong>
+    </h1>
   </main>
 )

@@ -3,8 +3,7 @@ import { type Anime } from '../types'
 /**
  * Tries to build an aired date string from the API. Otherwise, returns a blank string.
  */
-export const displayAired = ({ randomAnime }: Anime) => {
-  let airDate = ''
+export const displayAired = (anime: Anime) => {
   const months = [
     'January',
     'February',
@@ -19,17 +18,17 @@ export const displayAired = ({ randomAnime }: Anime) => {
     'November',
     'December',
   ]
-  try {
-    airDate += months[randomAnime.aired.prop.from.month - 1]
-    airDate += ' ' + randomAnime.aired.prop.from.day
-    airDate += ', ' + randomAnime.aired.prop.from.year
-    // can add status ('Finished Airing', etc.)
-    // airDate += ' (' + anime.randomAnime.status + ')'
-    if (randomAnime.aired.prop.from.month != null) return airDate
-    return ''
-  } catch (error) {
-    null
-  }
 
-  return ''
+  if (!anime.aired.prop.from.month) return ''
+
+  try {
+    const month = months[anime.aired.prop.from.month - 1]
+    const day = anime.aired.prop.from.day
+    const year = anime.aired.prop.from.year
+
+    return `${month} ${day}, ${year}`
+  } catch (error) {
+    console.error(error)
+    return ''
+  }
 }

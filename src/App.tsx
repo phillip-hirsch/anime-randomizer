@@ -1,44 +1,31 @@
-import { Home, Loading, Randomizer } from './components'
+import { Button, Error, Home, Loading, Randomizer } from './components'
 import './main.css'
-import { useFetchRandomAnime } from './utils'
+import { useFetchRandomAnime, type Anime, type Page } from './utils'
+
+const getContent = (page: Page, randomAnime: Anime) => {
+  switch (page) {
+    case 'Loading':
+      return <Loading />
+    case 'Random':
+      return <Randomizer {...randomAnime} />
+    case 'Error':
+      return <Error />
+    default:
+      return <Home />
+  }
+}
 
 const App = () => {
-  const { randomAnime, page, fetchRandomAnime } = useFetchRandomAnime()
-
-  if (page === 'Loading') {
-    return (
-      <>
-        <div>
-          <Loading />
-        </div>
-        <div>
-          <button disabled>Random</button>
-        </div>
-      </>
-    )
-  }
-
-  if (page === 'Random') {
-    return (
-      <>
-        <div>
-          <Randomizer randomAnime={randomAnime} />
-        </div>
-        <div>
-          <button onClick={() => fetchRandomAnime()}>Random</button>
-        </div>
-      </>
-    )
+  const { randomAnime, page, fetchRandomAnime } = useFetchRandomAnime() as {
+    randomAnime: Anime
+    page: Page
+    fetchRandomAnime: () => Promise<void>
   }
 
   return (
     <>
-      <div>
-        <Home />
-      </div>
-      <div>
-        <button onClick={() => fetchRandomAnime()}>Random</button>
-      </div>
+      <div>{getContent(page, randomAnime)}</div>
+      <Button onClick={fetchRandomAnime} disabled={page === 'Loading'} />
     </>
   )
 }

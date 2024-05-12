@@ -4,17 +4,15 @@ import { type Anime } from '../types'
 /**
  * Tries to return thumbnail from API, else returns placeholder
  * */
-export const displayImage = ({ randomAnime }: Anime) => {
+export const displayImage = (anime: Anime) => {
   try {
-    return randomAnime.images.jpg.image_url
+    return (
+      anime.images?.jpg?.image_url ||
+      anime.images?.webp?.image_url ||
+      missingCover
+    )
   } catch (error) {
-    null
+    console.error('Error in displayImage:', error)
+    return missingCover
   }
-
-  try {
-    return randomAnime.images.webp.image_url
-  } catch (error) {
-    null
-  }
-  return missingCover
 }
