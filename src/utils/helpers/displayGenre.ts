@@ -1,4 +1,4 @@
-import { Anime } from '../types'
+import { type Anime } from '../types'
 
 /**
  * Tries to return genres from API, else returns blank

@@ -1,4 +1,4 @@
-import { Anime } from '../types'
+import { type Anime } from '../types'
 
 /**
  * Tries to truncate the synopsis from the API. If the synopsis is null, returns a blank string.

@@ -1,4 +1,4 @@
-import { Anime } from '../types'
+import { type Anime } from '../types'
 
 /**
  * Tries to build an aired date string from the API. Otherwise, returns a blank string.
