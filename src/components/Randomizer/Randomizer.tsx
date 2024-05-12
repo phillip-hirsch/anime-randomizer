@@ -1,4 +1,5 @@
-import { Anime, renderItems } from '../../utils'
+import { AnimeTitle } from '..'
+import { renderItems, type Anime } from '../../utils'
 import { List } from '../List'
 
 /**
@@ -7,15 +8,7 @@ import { List } from '../List'
 export const Randomizer = ({ randomAnime }: Anime) => (
   <main>
     <div>
-      {/* Header for title of anime, which is clickable link */}
-      <h1 className="title">
-        <a href={randomAnime.url} target="_blank" rel="noreferrer">
-          <strong>{randomAnime.title}</strong>
-        </a>
-      </h1>
-      {/* Subtitle for english anime title */}
-      <h2>{randomAnime.title_english}</h2>
-      {/* anime info list */}
+      <AnimeTitle randomAnime={randomAnime} />
       <List items={renderItems({ randomAnime })} />
     </div>
   </main>
