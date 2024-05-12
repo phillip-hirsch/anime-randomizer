@@ -1,0 +1,57 @@
+/* Get rid of bottom padding for loading gif */
+.loadingMain {
+  padding-bottom: 0;
+}
+
+/* Loading screen gif */
+.loadingGif {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5%;
+  width: 35%;
+}
+
+/* 1280px breakpoint */
+@media (max-width: 1280px) {
+  .loadingGif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5%;
+    width: 50%;
+  }
+}
+
+/* 800px breakpoint. downscale fonts and resize image */
+@media (max-width: 800px) {
+  .loadingGif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 60%;
+  }
+}
+
+/* 600px breakpoint. downscale and resize more  */
+@media (max-width: 600px) {
+  .loadingGif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+    width: 70%;
+  }
+}
+
+/* 450px breakpoint. downscale and resize for peasants with small screens */
+@media (max-width: 450px) {
+  .loadingGif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40%;
+    width: 80%;
+  }
+}

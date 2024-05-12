@@ -33,6 +33,12 @@ button {
   box-shadow: 0 15px 0 #3b165e;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background-color: #635d6d;
+  box-shadow: 0 15px 0 #302e35;
+}
+
 /* anime title. big and yellow */
 h1 {
   width: 98%;
@@ -48,22 +54,9 @@ h2 {
   text-align: center;
 }
 
-/* list of anime information */
-li {
-  list-style: none;
-  margin-right: 3%;
-  margin-left: 3%;
-  font-size: 180%;
-}
-
 /* highlighted words like title */
 strong {
   color: rgb(248, 240, 130);
-}
-
-/* container for anime image and list of info */
-.stats {
-  margin-top: 10px;
 }
 
 /* anime thumbnail */
@@ -76,38 +69,13 @@ strong {
   margin-right: 2%;
 }
 
-/* home title */
-.home {
-  font-size: 200%;
-}
-
-/* get rid of bottom padding for loading gif */
-.loading-main {
-  padding-bottom: 0;
-}
-
-/* loading screen gif */
-.loading-screen {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2.5%;
-  width: 35%;
-}
-
 /* 1280px breakpoint */
 @media (max-width: 1280px) {
   main {
     padding-bottom: 20%;
   }
-  .loading-screen {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2.5%;
-    width: 50%;
-  }
 }
+
 /* 800px breakpoint. downscale fonts and resize image */
 @media (max-width: 800px) {
   button {
@@ -126,17 +94,8 @@ strong {
     width: 40%;
     border-radius: 20px;
   }
-  li {
-    font-size: 150%;
-  }
-  .loading-screen {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15%;
-    width: 60%;
-  }
 }
+
 /* 600px breakpoint. downscale and resize more  */
 @media (max-width: 600px) {
   button {
@@ -155,17 +114,8 @@ strong {
     width: 20%;
     border-radius: 12px;
   }
-  li {
-    font-size: 150%;
-  }
-  .loading-screen {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25%;
-    width: 70%;
-  }
 }
+
 /* 450px breakpoint. downscale and resize for peasants with small screens */
 @media (max-width: 450px) {
   button {
@@ -184,17 +134,8 @@ strong {
     width: 20%;
     border-radius: 12px;
   }
-  li {
-    font-size: 125%;
-  }
-  .loading-screen {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40%;
-    width: 80%;
-  }
 }
+
 /* 380px breakpoint. downscale for people viewing on a smart watch or something idk */
 @media (max-width: 380px) {
   main {
@@ -209,8 +150,5 @@ strong {
   img {
     width: 20%;
     border-radius: 12px;
-  }
-  li {
-    font-size: 125%;
   }
 }

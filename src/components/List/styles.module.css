@@ -1,0 +1,40 @@
+/* container for anime image and list of info */
+.listContainer {
+  margin-top: 10px;
+}
+
+/* list of anime information */
+.listItem {
+  list-style: none;
+  margin-right: 3%;
+  margin-left: 3%;
+  font-size: 180%;
+}
+
+/* 800px breakpoint. downscale fonts and resize image */
+@media (max-width: 800px) {
+  li {
+    font-size: 150%;
+  }
+}
+
+/* 600px breakpoint. downscale and resize more  */
+@media (max-width: 600px) {
+  li {
+    font-size: 150%;
+  }
+}
+
+/* 450px breakpoint. downscale and resize for peasants with small screens */
+@media (max-width: 450px) {
+  li {
+    font-size: 125%;
+  }
+}
+
+/* 380px breakpoint. downscale for people viewing on a smart watch or something idk */
+@media (max-width: 380px) {
+  li {
+    font-size: 125%;
+  }
+}
