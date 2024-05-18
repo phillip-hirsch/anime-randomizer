@@ -15,7 +15,7 @@ export const renderItems = (anime: Anime) => [
         image={{
           className: 'thumbnail',
           src: displayImage(anime),
-          alt: 'anime thumbnail',
+          alt: `Thumbnail image for ${anime.title}`,
         }}
       />
     ),
