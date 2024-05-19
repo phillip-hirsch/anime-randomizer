@@ -10,7 +10,6 @@ export const displayGenre = (anime: Anime) => {
       .map((genre) => genre.name)
       .join(', ')
   } catch (error) {
-    console.error('Error in displayGenre:', error)
-    return ''
+    throw new Error('Error in displayGenre: ' + error)
   }
 }

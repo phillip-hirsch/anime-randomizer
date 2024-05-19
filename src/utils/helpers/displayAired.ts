@@ -19,7 +19,7 @@ export const displayAired = (anime: Anime) => {
     'December',
   ]
 
-  if (!anime.aired.prop.from.month) return ''
+  if (!anime.aired.prop.from.month) return 'Not yet aired'
 
   try {
     const month = months[anime.aired.prop.from.month - 1]
@@ -28,7 +28,6 @@ export const displayAired = (anime: Anime) => {
 
     return `${month} ${day}, ${year}`
   } catch (error) {
-    console.error(error)
-    return ''
+    throw new Error('Error in displayAired: ' + error)
   }
 }

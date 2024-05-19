@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { type Anime, type Page } from '.'
+import { isAnime } from '.'
+import type { Anime, Page } from './types'
 
 export const useFetchRandomAnime = () => {
   const [randomAnime, setRandomAnime] = useState<Anime>()
@@ -18,6 +19,12 @@ export const useFetchRandomAnime = () => {
       }
 
       const temp = await response.json()
+
+      // Check if fetched data is a valid Anime object
+      if (!isAnime(temp.data)) {
+        console.log(temp.data)
+        throw new Error('Fetched data is not a valid Anime object')
+      }
 
       setRandomAnime(temp.data as Anime)
 
