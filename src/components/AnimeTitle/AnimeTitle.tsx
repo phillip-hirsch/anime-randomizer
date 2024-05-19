@@ -1,4 +1,4 @@
-import { type Anime } from '../../utils'
+import { type Anime } from '../../utils/types'
 
 /**
  * Header for title of anime, which is clickable link

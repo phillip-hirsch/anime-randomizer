@@ -1,11 +1,6 @@
-import {
-  displayAired,
-  displayGenre,
-  displayImage,
-  displaySynopsis,
-  type Anime,
-} from '.'
+import { displayAired, displayGenre, displayImage, displaySynopsis } from '.'
 import { ListItem } from '../components'
+import type { Anime } from './types'
 
 export const renderItems = (anime: Anime) => [
   {

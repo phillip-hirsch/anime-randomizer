@@ -1,5 +1,6 @@
 import { AnimeTitle } from '..'
-import { renderItems, type Anime } from '../../utils'
+import { renderItems } from '../../utils'
+import type { Anime } from '../../utils/types'
 import { List } from '../List'
 
 /**

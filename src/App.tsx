@@ -1,6 +1,7 @@
 import { Button, Error, Home, Loading, Randomizer } from './components'
 import './main.css'
-import { useFetchRandomAnime, type Anime, type Page } from './utils'
+import { useFetchRandomAnime } from './utils'
+import type { Anime, Page } from './utils/types'
 
 const getContent = (page: Page, randomAnime: Anime) => {
   switch (page) {
